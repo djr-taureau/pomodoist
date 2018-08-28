@@ -1,0 +1,118 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Red Item",
+      "price": "100",
+      "description": "This is a red item"
+    },
+    {
+      "id": "2",
+      "name": "Orange Item edited",
+      "price": 200,
+      "description": "This is an orange item"
+    },
+    {
+      "id": "3",
+      "name": "Yellow Item",
+      "price": 300,
+      "description": "This is a yellow item"
+    },
+    {
+      "id": "4",
+      "name": "Green Item",
+      "price": 400,
+      "description": "This is a green item"
+    },
+    {
+      "id": "5",
+      "price": 500,
+      "name": "Blue Item",
+      "description": "This is a blue item"
+    },
+    {
+      "id": "6",
+      "name": "Indigo Item",
+      "price": 600,
+      "description": "This is a indigo item"
+    },
+    {
+      "id": "7",
+      "name": "Violet Item",
+      "price": 700,
+      "description": "This is a violet item"
+    },
+    {
+      "id": "nlkKF0d",
+      "name": "New Task Item",
+      "price": "23.00",
+      "description": "Taking out for a test drive"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "5",
+      "name": "Blue Widget",
+      "price": 500,
+      "description": "This is a blue widget"
+    },
+    {
+      "id": "6",
+      "name": "Indigo Widget",
+      "price": 600,
+      "description": "This is a indigo widget"
+    },
+    {
+      "id": "7",
+      "name": "Violet Widget",
+      "price": 700,
+      "description": "This is a violet widget"
+    },
+    {
+      "id": "6UCWnwE",
+      "name": "New Pomo Widget",
+      "price": "23",
+      "description": "new pomo widget"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Jonathan Garvey",
+      "items": [
+        "7",
+        "6",
+        "5"
+      ],
+      "widgets": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Lukas Ruebbelke",
+      "items": [
+        "4",
+        "3"
+      ],
+      "widgets": [
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Rob Wormald",
+      "items": [
+        "2",
+        "1"
+      ],
+      "widgets": [
+        "6",
+        "7"
+      ]
+    }
+  ]
+}

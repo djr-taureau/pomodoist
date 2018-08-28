@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Tasks</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let task of tasks" (click)="selected.emit(task)" class="record">
+        <h3 mat-line>{{task.content}}</h3>
+        <p mat-line>
+          {{task.project_id}}
+        </p>
+        <p>
+          {{task.completed}}
+        </p>
+        <button *ngIf="!readonly" mat-icon-button (click)="deleted.emit(task);$event.stopImmediatePropagation();">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
