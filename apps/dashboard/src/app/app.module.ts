@@ -11,12 +11,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TaskDetailComponent } from './tasks/task-detail/task-detail.component';
 import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
+import { TasksPomosListComponent } from './tasks/tasks-pomos-list/tasks-pomos-list.component';
 import { TasksTotalComponent } from './tasks/tasks-total/tasks-total.component';
 import { TasksComponent } from './tasks/tasks.component';
-import { PomoDetailComponent } from './pomos/pomo-detail/pomo-detail.component';
-import { PomosListComponent } from './pomos/pomos-list/pomos-list.component';
-import { PomosTotalComponent } from './pomos/pomos-total/pomos-total.component';
-import { PomosComponent } from './pomos/pomos.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +21,9 @@ import { PomosComponent } from './pomos/pomos.component';
     HomeComponent,
     TasksComponent,
     TasksListComponent,
+    TasksPomosListComponent,
     TaskDetailComponent,
     TasksTotalComponent,
-    PomosComponent,
-    PomoDetailComponent,
-    PomosListComponent,
-    PomosTotalComponent
   ],
   imports: [
     BrowserAnimationsModule,

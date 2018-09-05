@@ -7,6 +7,7 @@ import * as fromTasks from './tasks/tasks.reducer';
 import * as fromPomos from './pomos/pomos.reducer';
 import * as fromProjects from './projects/projects.reducer';
 import * as fromUsers from './users/users.reducer';
+import { Pomo } from '../core/pomos/pomo.model';
 
 export interface AppState {
   tasks: fromTasks.TasksState,
@@ -92,6 +93,18 @@ export const selectCurrentPomo = createSelector(
   }
 );
 
+export const selectTaskPomos = createSelector(
+  selectCurrentTaskId,
+  selectAllPomos,
+  (id, allPomos: Pomo[]) => {
+    if (id && selectTaskPomos) {
+      return allPomos.filter((pomo) => pomo.task_id === id);
+    } else {
+      return allPomos;
+    }
+  }
+);
+
 // -------------------------------------------------------------------
 // Projects SELECTORS
 // -------------------------------------------------------------------
@@ -147,7 +160,7 @@ export const selectUsersDetails = createSelector(
       ...u,
       tasks: u.tasks.map(taskId => taskEntities[taskId]),
       pomos: u.pomos.map(pomoId => pomoEntities[pomoId]),
-      projets: u.projects.map(projectId => projectEntities[projectId])
+      // projets: u.projects.map(projectId => projectEntities[projectId])
     }));
   }
 );
