@@ -4,6 +4,6 @@
     <app-tasks-list [tasks]="tasks$ | async" (selected)="selectTask($event)" (deleted)="deleteTask($event)">
     </app-tasks-list>
   </div>
-  <app-task-detail class="col-50" [task]="currentTask$ | async" (saved)="saveTask($event)" (cancelled)="resetCurrentTask($event)">
+  <app-task-detail class="col-50" [taskPomos]="taskPomos$ | async" [task]="currentTask$ | async" (saved)="saveTask($event)" (cancelled)="resetCurrentTask($event)">
   </app-task-detail>
 </div>

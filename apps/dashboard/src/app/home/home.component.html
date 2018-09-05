@@ -3,9 +3,7 @@
     <h1>{{user.name}}</h1>
     <div class="col">
       <app-tasks-total [tasks]="user.tasks"></app-tasks-total>
-      <app-pomos-total [pomos]="user.pomos"></app-pomos-total>
     </div>
     <app-tasks-list class="col" [tasks]="user.tasks" [readonly]="true"></app-tasks-list>
-    <app-pomos-list class="col" [pomos]="user.pomos" [readonly]="true"></app-pomos-list>
   </div>
 </div>

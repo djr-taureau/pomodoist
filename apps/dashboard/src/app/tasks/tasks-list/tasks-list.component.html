@@ -9,7 +9,7 @@
       <mat-list-item *ngFor="let task of tasks" (click)="selected.emit(task)" class="record">
         <h3 mat-line>{{task.content}}</h3>
         <p mat-line>
-          {{task.project_id}}
+          {{task.project_id}}, taskID: {{task.id}}
         </p>
         <p>
           {{task.completed}}

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActionsSubject, select, Store } from '@ngrx/store';
 import { filter } from 'rxjs/operators';
 
-import { selectAllPomos, selectCurrentPomo } from '..';
+import { selectAllPomos, selectCurrentPomo, selectTaskPomos } from '..';
 import { PomosActionTypes } from './pomos.actions';
 import * as PomosActions from './pomos.actions';
 import { PomosState } from './pomos.reducer';
@@ -12,6 +12,7 @@ import { PomosState } from './pomos.reducer';
 })
 export class PomosFacade {
   allPomos$ = this.store.pipe(select(selectAllPomos));
+  taskPomos$ = this.store.pipe(select(selectTaskPomos));
   currentPomo$ = this.store.pipe(select(selectCurrentPomo));
 
   mutations$ = this.actions$.pipe(
@@ -26,6 +27,10 @@ export class PomosFacade {
 
   selectPomo(PomoId) {
     this.store.dispatch(new PomosActions.PomoSelected(PomoId));
+  }
+
+  selectPomos() {
+    /// \return this.taskPomos$ = this.store.pipe(select(selectTaskPomos))
   }
 
   loadAll() {

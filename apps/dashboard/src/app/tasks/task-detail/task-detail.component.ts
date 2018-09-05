@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Task } from '@workspace/common-data';
+import { Task, Pomo } from '@workspace/common-data';
 
 @Component({
   selector: 'app-task-detail',
@@ -9,6 +9,8 @@ import { Task } from '@workspace/common-data';
 export class TaskDetailComponent {
   originalContent: string;
   selectedTask: Task;
+
+  @Input() taskPomos: Pomo[];
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
 
