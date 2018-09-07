@@ -12,20 +12,15 @@ import { DroppableEvent } from '../shared/directives/droppable/droppable.service
 @Component({
   selector: 'app-task-board',
   templateUrl: './task-board.component.html',
-  styleUrls: ['./task-board.scss']
+  styleUrls: ['./task-board.component.css']
 })
 export class TaskBoardComponent implements OnInit {
 
   @Input() tasks: Task[];
+
   backlogTasks: Task[];
   workingTasks: Task[];
   doneTasks: Task[];
-
-  dropZones: any[] = [
-    { id: 'zone-1', title: 'backlog', items: [] },
-    { id: 'zone-2', title: 'working', items: [] },
-    { id: 'zone-3', title: 'done', items: [] },
-  ];
 
 
 
@@ -34,36 +29,33 @@ export class TaskBoardComponent implements OnInit {
   ngOnInit(){
     console.log(this.tasks);
     this.backlogTasks = this.tasks;
-    console.log('backlog tasks', this.backlogTasks);
+    // console.log('backlog tasks', this.backlogTasks);
   }
 
-  dropped(event: DroppableEvent, zone: any): void {
-    zone.items.push(event.data);
-    event.data.selected = true;
+
+
+  onDrop(event: CdkDragDrop<Task[]>) {
+    moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
   }
 
-  // onDrop(event: CdkDragDrop<object[]>) {
-  //   moveItemInArray(this.backlogTasks, event.previousIndex, event.currentIndex);
-  // }
+  isAllowed = (drag?: CdkDrag, drop?: CdkDrop) => {
+    return true;
+  };
 
-  // isAllowed = (drag?: CdkDrag, drop?: CdkDrop) => {
-  //   return false;
-  // };
-
-  // addToList(event: CdkDragDrop<object[]>) {
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(
-  //       event.container.data,
-  //       event.previousIndex,
-  //       event.currentIndex
-  //     );
-  //   } else {
-  //     transferArrayItem(
-  //       event.previousContainer.data,
-  //       event.container.data,
-  //       event.previousIndex,
-  //       event.currentIndex
-  //     );
-  //   }
-  // }
+  addToList(event: CdkDragDrop<Task[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
+  }
 }
