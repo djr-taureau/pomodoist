@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DraggableDirective } from './shared/directives/draggable/draggable.directive';
 import { DraggableHelperDirective } from './shared/directives/draggable/draggable-helper.directive';
+import { MinuteSecondsPipe } from './shared/pipes/timer-pipe';
+import { TotalTimePipe } from './shared/pipes/total-time.pipe';
 import { DroppableService } from './shared/directives/droppable/droppable.service';
 import { DropZoneDirective } from './shared/directives/droppable/drop-zone.directive';
 import { DroppableDirective } from './shared/directives/droppable/droppable.directive';
@@ -49,7 +51,7 @@ import { TaskBoardComponent } from './task-board/task-board.component';
     CommonDataModule,
     TotalsViewModule
   ],
-  providers: [DroppableService],
+  providers: [DroppableService, MinuteSecondsPipe, TotalTimePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
