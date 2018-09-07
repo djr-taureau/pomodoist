@@ -1,0 +1,17 @@
+<div style="height: 200px; width: 200px; overflow: hidden">
+  <ng-container *ngFor="let item of backlogTasks">
+    <div *ngIf="!item.selected" draggable="true"  class="box" dfDroppable [dfDroppableData]="item">
+      {{ item.content }}
+      <div *dfDraggableHelper class="box">{{ item.content }}</div>
+    </div>
+  </ng-container>
+  </div>
+
+  <div *ngFor="let zone of dropZones" class="area" dfDropZone (drop)="dropped($event, zone)">
+    <h3>{{ zone.title }}</h3>
+    <div *ngFor="let item of zone.items" class="box">
+      {{ item.content }}
+      <div *appDraggableHelper class="box">{{ item.content }}</div>
+    </div>
+  </div>
+

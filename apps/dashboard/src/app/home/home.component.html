@@ -1,9 +1,10 @@
 <div class="container">
-  <div class="row" *ngFor="let user of users$ | async">
-    <h1>{{user.name}}</h1>
-    <div class="col">
-      <app-tasks-total [tasks]="user.tasks"></app-tasks-total>
+    <div class="row" *ngFor="let user of users$ | async">
+      <h1>{{user.name}}</h1>
+      <div class="col">
+        <app-tasks-total [tasks]="user.tasks"></app-tasks-total>
+      </div>
+      <app-tasks-list class="col" [tasks]="user.tasks" [readonly]="true"></app-tasks-list>
     </div>
-    <app-tasks-list class="col" [tasks]="user.tasks" [readonly]="true"></app-tasks-list>
   </div>
-</div>
+
